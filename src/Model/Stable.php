@@ -20,8 +20,8 @@ class Stable extends Address{
         "Adresse : " . $this->getAdress() . "\n" .
         "Rue : " . $this->getStreet() . "\n" .
         "Code postal : " . $this->getPostcode() . "\n" .
-        "Ville : " . $this->getCity() . "\n" ;
-        // "Nom du gérant : " . $this->getManager()->getName() . "\n"
+        "Ville : " . $this->getCity() . "\n" .
+        "Nom du gérant : " . $this->getManager()->getName() . "\n";
     }
 
     /**

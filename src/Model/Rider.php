@@ -2,6 +2,6 @@
 namespace App\Model;
 
 
-class Rider extends Human {
-    // 
+class Rider {
+// 
 }
