@@ -11,15 +11,17 @@ require_once __DIR__ . "/../src/app.php";
 // $human = new Human("Jane", new Category(), 34, "1 rue de la ferme", "14000", "Caen");
 // echo $human;
 
-// $rider 
-// echo $rider;
+echo "/-- Rider --\ \n";
+$rider = new Rider("Chris", new Category("rider"), 34, "rue de la valée", "14000", "Caen");
+echo $rider;
 
-echo "--------------------------------------------\n";
+echo "\n";
 
-$manager = new Manager("John", new Category("A"), "1 rue de prairie", "1 rue de la prairie", "14000", "Caen");
+echo "/-- Manager --\ \n";
+$manager = new Manager("John", new Category("manager"), "1 rue de prairie", "1 rue de la prairie", "14000", "Caen");
 echo $manager;
 
-echo "--------------------------------------------\n";
+echo "\n";
 
 $stable = new Stable("La ferme", "1 rue de la ferme", "1 rue de la ferme", "14000", "Caen", $manager);
 echo $stable;
