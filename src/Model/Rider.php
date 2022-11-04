@@ -5,9 +5,11 @@ namespace App\Model;
 class Rider extends Human {
     public string $gameType;
 
-    public function __construct(string $name, Category $categorie, string $adress, string $street, string $postcode, string $city) 
+    public function __construct(string $name, Category $categorie, string $gameType, string $adress, string $street, string $postcode, string $city) 
     {
         parent::__construct($name, $categorie, $adress, $street, $postcode, $city);
+
+        $this->setGameType($gameType);
     }
 
 

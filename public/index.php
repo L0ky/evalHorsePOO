@@ -3,6 +3,7 @@
 use App\Model\Category;
 use App\Model\Human;
 use App\Model\Manager;
+use App\Model\Poney;
 use App\Model\Rider;
 use App\Model\Stable;
 
@@ -12,7 +13,7 @@ require_once __DIR__ . "/../src/app.php";
 // echo $human;
 
 echo "/-- Rider --\ \n";
-$rider = new Rider("Chris", new Category("rider"), 34, "rue de la valée", "14000", "Caen");
+$rider = new Rider("Chris", new Category("rider"),"Cross",  34, "rue de la valée", "14000", "Caen");
 echo $rider;
 
 echo "\n";
@@ -29,3 +30,5 @@ echo $stable;
 echo "--------------------------------------------\n";
 
 
+$poney = new Poney("Poney", "alzan", 1, $rider);
+echo $poney;

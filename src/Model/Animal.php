@@ -1,8 +1,8 @@
 <?php 
 namespace App\Model;
 
-class Category {
-    public string $name;
+abstract class Animal {
+    private string $name;
 
     public function __construct(string $name) {
         $this->setName($name);
@@ -25,7 +25,7 @@ class Category {
      *
      * @return self
      */
-    public function setName(string $name): self
+    private function setName(string $name): self
     {
         $this->name = $name;
 

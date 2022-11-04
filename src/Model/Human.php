@@ -12,7 +12,7 @@ abstract class Human extends Address {
         $this->setName($name)
             ->setCategorie($categorie);
     }
-
+ 
     public function __toString(): string
     {
         return "Nom : " . $this->getName() . "\n" .
