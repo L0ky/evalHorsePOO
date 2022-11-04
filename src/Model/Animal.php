@@ -8,6 +8,11 @@ abstract class Animal {
         $this->setName($name);
     }
 
+    public function __toString()
+    {
+        return "Nom : " . $this->getName() . "\n";
+    }
+
     /**
      * Get the value of name
      *

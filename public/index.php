@@ -30,5 +30,11 @@ echo $stable;
 echo "--------------------------------------------\n";
 
 
-$poney = new Poney("Poney", "alzan", 1, $rider);
+$poney = new Poney("Jean-Claude", "Alzan", 1, $rider);
 echo $poney;
+
+$cheval = new Poney("Bertrand", "Alzan", 1, $rider);
+echo $cheval;
+
+$sheitland = new Poney("Maurice", "Alzan", 1, $rider);
+echo $sheitland;

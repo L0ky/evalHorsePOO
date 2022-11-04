@@ -6,6 +6,9 @@ abstract class Equine extends Animal {
     private string $color;
     private string $water;
     private Rider $rider;
+    private static int $count = 0;
+    private string $category;
+    
 
     public function __construct(string $name, string $color, string $water, Rider $rider) {
         parent::__construct($name);
@@ -14,6 +17,17 @@ abstract class Equine extends Animal {
             ->setId()
             ->setWater($water)
             ->setRider($rider);
+            self::$count++;
+    }
+
+    public function __toString()
+    {
+        return  "ID : " . $this->getId() . "\n" .
+        parent::getName() . "\n" .
+        "Couleur : " . $this->getColor() . "\n" .
+        "Categorie : " . $this->getCategory() . "\n" .
+        "Eau : " . $this->getWater() . "\n" .
+        "Rider : " . $this->getRider()->getName() . "\n";
     }
 
         /**
@@ -35,7 +49,13 @@ abstract class Equine extends Animal {
      */
     public function setColor(string $color): self
     {
-        // $color = ['Alzan', 'Bai', 'Pie', 'Grey', 'White'];
+        $colors = ['Alzan', 'Bai', 'Pie', 'Grey', 'White'];
+        
+        if (in_array($color, $colors)) {
+            $this->color = $color;
+        } else {
+            throw new \Exception("La couleur n'est pas valide");
+        }
 
         $this->color = $color;
 
@@ -61,7 +81,7 @@ abstract class Equine extends Animal {
      */
     public function setId(): self
     {
-        $id = "000" . substr($this->getName(), 0, 1) . substr($this->getColor(), 0, 1);
+        $id = "000" . "-" . substr($this->getName(), 0, 1) . "-" . substr($this->getColor(), 0, 1) . "-" . self::$count;
 
         $this->id = $id;
 
@@ -112,6 +132,47 @@ abstract class Equine extends Animal {
     public function setRider(Rider $rider): self
     {
         $this->rider = $rider;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of count
+     *
+     * @return int
+     */
+    public static function getCount(): int
+    {
+        return self::$count;
+    }
+
+    /**
+     * Get the value of category
+     *
+     * @return string
+     */
+    public function getCategory(): string
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set the value of category
+     *
+     * @param string $category
+     *
+     * @return self
+     */
+    public function setCategory(string $category): self
+    {
+        $choice = ['Sheitland', 'Poney', 'Horse'];
+        if (in_array($category, $choice)) {
+            $this->category = $category;
+        } else {
+            throw new \Exception("La catégorie n'est pas valide");
+        }
+
+        $this->category = $category;
 
         return $this;
     }
