@@ -8,6 +8,7 @@ abstract class Equine extends Animal {
     private Rider $rider;
     private static int $count = 0;
     private string $category;
+    private array $collection = [];
     
 
     public function __construct(string $name, string $color, string $water, Rider $rider) {
@@ -23,9 +24,9 @@ abstract class Equine extends Animal {
     public function __toString()
     {
         return  "ID : " . $this->getId() . "\n" .
-        parent::getName() . "\n" .
-        "Couleur : " . $this->getColor() . "\n" .
         "Categorie : " . $this->getCategory() . "\n" .
+        parent::__toString() .
+        "Couleur : " . $this->getColor() . "\n" .
         "Eau : " . $this->getWater() . "\n" .
         "Rider : " . $this->getRider()->getName() . "\n";
     }
@@ -131,7 +132,12 @@ abstract class Equine extends Animal {
      */
     public function setRider(Rider $rider): self
     {
-        $this->rider = $rider;
+
+        if(in_array($rider, $this->getCollection())) {
+            throw new \Exception("Un cavalier est déjà présent");
+        } else {
+            $this->setCollection($rider);
+        }
 
         return $this;
     }
@@ -173,6 +179,30 @@ abstract class Equine extends Animal {
         }
 
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of collection
+     *
+     * @return array
+     */
+    public function getCollection(): array
+    {
+        return $this->collection;
+    }
+
+    /**
+     * Set the value of collection
+     *
+     * @param array $collection
+     *
+     * @return self
+     */
+    public function setCollection(Rider $collection): self
+    {
+        $this->collection[] = $collection;
 
         return $this;
     }
