@@ -47,13 +47,4 @@ echo "\n";
 $sheitland = new Sheitland("Maurice", "Bai", 1, $rider3);
 echo $sheitland;
 
-echo "--------------------------------------------\n";
-// $rider1 = new Rider("Christophe", new Category("rider"), "Cross",  34, "rue de la valée", "14000", "Caen");
-
-// $horse1 = new Horse("Bertrand", "Grey", 1, $rider1);
-// $horse2 = new Horse("Bertran", "Grey", 1, $rider1);
-// $horse3 = new Horse("Bertrand", "Grey", 1, $rider1);
-// $horse3 = new Horse("Bertrand", "Grey", 1, $rider1);
-
-// echo $rider1;
 
