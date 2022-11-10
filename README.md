@@ -1,5 +1,7 @@
 ![](https://www.mydigitalschool.com/themes/custom/mds/img/logo.png?20220829)
 
+**Matti Onfroy**
+
 # Epreuve de Programmation Orientée Objet
 > **MyDigitalHorse**
 
