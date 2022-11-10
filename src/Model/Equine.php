@@ -27,8 +27,7 @@ abstract class Equine extends Animal {
         "Categorie : " . $this->getCategory() . "\n" .
         parent::__toString() .
         "Couleur : " . $this->getColor() . "\n" .
-        "Eau : " . $this->getWater() . "\n" .
-        "Rider : " . $this->getRider()->getName() . "\n";
+        "Eau : " . $this->getWater() . "\n" ;
     }
 
         /**
